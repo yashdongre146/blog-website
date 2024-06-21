@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/css/blogs.css">
+</head>
+
+<body>
+    <!-- The pop-up form -->
+    <div id="popupForm" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closeForm">&times;</span>
+            <form id="updatePost" onsubmit="updatePost(event)">
+                <div class="form-heading">Update a Post</div>
+
+                <label for="updateTitle">Title:</label>
+                <input type="text" id="updateTitle" name="updateTitle" required /><br /><br />
+
+                <label for="updateContent">Content:</label>
+                <input type="text" id="updateContent" name="updateContent" required /><br /><br />
+
+                <label for="updateTags">Tags:</label><br />
+                <input type="checkbox" id="tagTechnology" name="updateTags" value="Technology" />
+                <label for="tagTechnology">Technology</label><br />
+
+                <input type="checkbox" id="tagHealthWellness" name="updateTags" value="Health and Wellness" />
+                <label for="tagHealthWellness">Health and Wellness</label><br />
+
+                <input type="checkbox" id="tagFinance" name="updateTags" value="Finance" />
+                <label for="tagFinance">Finance</label><br />
+
+                <input type="checkbox" id="tagTravelTourism" name="updateTags" value="Travel and Tourism" />
+                <label for="tagTravelTourism">Travel and Tourism</label><br />
+
+                <input type="checkbox" id="tagFood" name="updateTags" value="Food" />
+                <label for="tagFood">Food</label><br />
+
+                <input type="checkbox" id="tagFashion" name="updateTags" value="Fashion" />
+                <label for="tagFashion">Fashion</label><br />
+
+                <input type="checkbox" id="tagSports" name="updateTags" value="Sports" />
+                <label for="tagSports">Sports</label><br />
+
+                <input type="checkbox" id="tagFitness" name="updateTags" value="Fitness" />
+                <label for="tagFitness">Fitness</label><br />
+
+                <input type="checkbox" id="tagHistory" name="updateTags" value="History" />
+                <label for="tagHistory">History</label><br />
+
+                <button type="submit">Update Post</button>
+            </form>
+        </div>
+    </div>
+    <div class="left-side">
+        <form id="createPost" onsubmit="createPost(event)">
+            <div class="form-heading">Create a new Post</div>
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required />
+
+            <label for="content">Content:</label>
+            <input type="text" id="content" name="content" required />
+
+            <label for="tags">Tags:</label><br />
+            <input type="checkbox" id="tagTechnology" name="tags" value="Technology">
+            <label for="tagTechnology">Technology</label><br />
+
+            <input type="checkbox" id="tagHealthWellness" name="tags" value="Health and Wellness">
+            <label for="tagHealthWellness">Health and Wellness</label><br />
+
+            <input type="checkbox" id="tagFinance" name="tags" value="Finance">
+            <label for="tagFinance">Finance</label><br />
+
+            <input type="checkbox" id="tagTravelTourism" name="tags" value="Travel and Tourism">
+            <label for="tagTravelTourism">Travel and Tourism</label><br />
+
+            <input type="checkbox" id="tagFood" name="tags" value="Food">
+            <label for="tagFood">Food</label><br />
+
+            <input type="checkbox" id="tagFashion" name="tags" value="Fashion">
+            <label for="tagFashion">Fashion</label><br />
+
+            <input type="checkbox" id="tagSports" name="tags" value="Sports">
+            <label for="tagSports">Sports</label><br />
+
+            <input type="checkbox" id="tagFitness" name="tags" value="Fitness">
+            <label for="tagFitness">Fitness</label><br />
+
+            <input type="checkbox" id="tagHistory" name="tags" value="History">
+            <label for="tagHistory">History</label><br />
+
+            <button type="submit">Create Post</button>
+        </form>
+
+        <form id="retrieveForm" onsubmit="getPost(event)">
+            <input type="text" id="retrieveId" placeholder="Enter Post ID">
+            <button type="submit">Retrieve Post by ID</button>
+        </form>
+        <form id="updateForm" onsubmit="openModal(event)">
+            <input type="text" id="updateId" placeholder="Enter Post ID">
+            <button type="submit">Update Post by ID</button>
+        </form>
+        <form id="deleteForm" onsubmit="deletePost(event)">
+            <input type="text" id="deleteId" placeholder="Enter Post ID">
+            <button type="submit">Delete Post by ID</button>
+        </form>
+    </div>
+    <div class="right-side">
+        <!-- <div class="post">
+        <div class="post-title">Sample Post 1</div>
+        <div class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    </div> -->
+        <div class="container">
+            <div id="posts-container">
+                <!-- Posts will be injected here -->
+            </div>
+        </div>
+    </div>
+    <script src="/js/blogs.js"></script>
+</body>
+
+</html>

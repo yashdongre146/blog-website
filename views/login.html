@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="website-name">Blog Website</div>
+        <div class="menu-icon">&#9776;</div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form onsubmit="login(event)">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="bottom-icons">
+            <div class="icon-container" onclick="redirectTo('/')">
+                <span>Sign-Up</span>
+            </div>
+            <div class="icon-container" onclick="redirectTo('/login')">
+                <span>Sign-In</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function redirectTo(url) {
+          window.location.href = url;
+        }
+      </script>
+    <script src="/js/login.js"></script>
+</body>
+
+</html>
